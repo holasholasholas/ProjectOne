@@ -40,45 +40,19 @@
 const firstSqr = addEventListener("click", function() {
     
     document.getElementById("0").textContent = "X";
-    document.getElementById("0").textContent = "O";
+    
     
 });
 
-const secondaSqr = addEventListener("click", function() {
-    document.getElementById("1").textContent = "X";
+firstSqr = addEventListener("click", function() {
+    
+    document.getElementById("0").textContent = "O"; 
+    
 });
 
-const thirdSqr = addEventListener("click", function() {
-    document.getElementById("2").textContent = "X";
+let reset = addEventListener("click", function() {
+    
+    document.getElementById("0").textContent = " "; 
+    stopPropagation()
 });
 
-const fourthSqr = addEventListener("click", function() {
-    document.getElementById("3").textContent = "X";
-});
-
-const fifthqr = addEventListener("click", function() {
-    document.getElementById("4").textContent = "X";
-});
-
-const sixthSqr = addEventListener("click", function() {
-    document.getElementById("5").textContent = "X";
-});
-
-const seventhSqr = addEventListener("click", function() {
-    document.getElementById("6").textContent = "X";
-});
-
-const eightSqr = addEventListener("click", function() {
-    document.getElementById("7").textContent = "X";
-});
-const nineSqr = addEventListener("click", function() {
-    document.getElementById("8").textContent = "X";
-});
-
-
-
-
-
-// const changeText = addEventListener("click", function() {
-//     document.getElementById("test").textContent = "wow it works";
-// });
