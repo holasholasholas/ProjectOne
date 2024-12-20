@@ -79,8 +79,8 @@ Remembering: As the game progresses, players need to remember the locations of t
 Game End: The game continues until all pairs are matched. The player with the most pairs at the end wins.
 
 Example of a Turn:
-Player 1 flips over two cards, say a "King of Hearts" and a "Queen of Spades". These do not match, so Player 1 turns them back over.
-Player 2 then flips over two cards, perhaps a "King of Hearts" and a "King of Diamonds". These match, so Player 2 keeps the pair and gets another turn. <br>
+Player 1 flips over two cards, say a "Orange" and a "Apple". These do not match, so Player 1 turns them back over.
+Player 2 then flips over two cards, perhaps a "Watermelon" and a "Watermelon". These match, so Player 2 keeps the pair and gets another turn. <br>
 
 Winning:
 The game ends when all pairs are matched.
