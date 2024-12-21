@@ -133,5 +133,11 @@ This is the first draft of the game
 <br>
 
 ### Credits 
+
+Consider diffculty levels 
+3x2 MVP 
+medium diffculty might not be complete
+
+
 ---
 <br>
