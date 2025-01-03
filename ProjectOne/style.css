@@ -1,0 +1,20 @@
+body {
+    background: grey;
+    margin: 0;
+}
+
+.mainBoard {
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   align-content: center;
+   gap: 1em;
+}
+
+.tile {
+    display: flex;
+    min-height: 120px;
+    min-width: 120px;
+    background: black;
+    cursor: pointer;
+}
