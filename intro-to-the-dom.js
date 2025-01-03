@@ -20,3 +20,6 @@ function calculate(button){
 }
 
 buttons.forEach(button => button.addEventListener("click", () => calculate(button)))
+// doesn't want to use the first param of the nameless function but the function of calculate 
+
+const button = buttons[i]

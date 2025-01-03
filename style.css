@@ -1,0 +1,27 @@
+body {
+    margin: 0px;
+    background-color: lightgray;
+}
+
+ul {
+    margin:0px;
+
+}
+
+div {
+    color: blue;
+}
+
+.important {
+    color: red;
+    font-weight: bold;
+
+}
+
+.super-cool {
+    
+    border: 2px solid;
+    border-color: green;
+}
+
+#about 

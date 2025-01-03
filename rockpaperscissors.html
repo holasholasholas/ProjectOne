@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors</title>
+  <!-- <link rel="stylesheet" href="./css/style.css" /> -->
+  <script defer src="rockpaperscissors.js"></script>
+  <style>
+    .choose {
+      /* background-color: "green" */
+      border-color: green;
+      /* color: "blue" */
+    }
+
+    #high-score-page {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="game-page">
+    <header>
+      <h1>Rock Paper Scissors</h1>
+      <h2>Num of wins: 3</h2>
+      <p id="result-display">You choose ???, Computer choose ???, Result is ???</p>
+    </header>
+    <main>
+      <button class="something">🪨</button>
+      <button id="paper">📄</button>
+      <button id="scissors">✂️</button>
+    </main>
+    <hr />
+    <footer>
+      <button id="high-score-button">High score</button>
+    </footer>
+  </div>
+  <div id="high-score-page">
+    <h1>High Score</h1>
+
+    <ol>
+      <li>Simon - 10</li>
+      <li>Kristie - 7</li>
+    </ol>
+  </div>
+</body>
+
+</html>

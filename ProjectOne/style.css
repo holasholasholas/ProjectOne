@@ -18,3 +18,10 @@ body {
     background: black;
     cursor: pointer;
 }
+
+.scoreBoard {
+    float: left;
+    width: 70%;
+
+
+}

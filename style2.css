@@ -1,0 +1,12 @@
+body {
+    font-family: Helvetica, Tahoma, Verdana, sans-serif;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  * {
+    box-sizing: border-box;
+    
+  }
