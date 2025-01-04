@@ -3,25 +3,19 @@ body {
     margin: 0;
 }
 
-.mainBoard {
-   display: flex;
-   justify-content: center;
-   flex-wrap: wrap;
-   align-content: center;
-   gap: 1em;
-}
+/* .tiles-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: center;
+
+} */
 
 .tile {
-    display: flex;
-    min-height: 120px;
-    min-width: 120px;
-    background: black;
+    height: 100px;
+    width: 100px;
+    background: blue;
+    border: 2px solid white;
     cursor: pointer;
-}
-
-.scoreBoard {
-    float: left;
-    width: 70%;
-
 
 }
