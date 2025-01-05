@@ -1,21 +1,21 @@
 body {
-    background: grey;
-    margin: 0;
+  background: #333333;
+  margin: 0;
+
 }
 
-/* .tiles-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap:wrap;
-    justify-content: center;
+.tiles {
+    margin: 48px auto;
+    width: max-content;
+    display: grid;
+    grid-template-columns: repeat(4,100px);
+    gap: 16px;
 
-} */
+}
 
 .tile {
     height: 100px;
-    width: 100px;
-    background: blue;
-    border: 2px solid white;
+    background: black;
+    border: 5px solid blue;
     cursor: pointer;
-
 }
