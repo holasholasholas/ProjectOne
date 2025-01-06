@@ -1,34 +1,51 @@
 
-const tilesContainer = document.querySelector(".tiles")
+const tilesContainerEasy = document.querySelector(".easy-tiles")
+const tilesContainerMedium = document.querySelector(".medium-tiles")
+const tilesContainerHard = document.querySelector(".hard-tiles")
 
-console.log(tilesContainer)
-
-function createTile(){
+function createEasyTile(){
     const element = document.createElement("div");
     const randomId = Math.random();
     element.classList.add("tile");
     element.setAttribute("serial", randomId);
-    tilesContainer.appendChild(element)
+    tilesContainerEasy.appendChild(element)
     
 }
 
-hardTiles()
+function createMediumTile(){
+    const element = document.createElement("div");
+    const randomId = Math.random();
+    element.classList.add("tile");
+    element.setAttribute("serial", randomId);
+    tilesContainerMedium.appendChild(element)
+    
+}
+
+function createHardTile(){
+    const element = document.createElement("div");
+    const randomId = Math.random();
+    element.classList.add("tile");
+    element.setAttribute("serial", randomId);
+    tilesContainerHard.appendChild(element)
+    
+}
+
 
 function easyTiles(){
     for(let i=0; i < 16; i++){
-        createTile()
+        createEasyTile()
     }
 }
-
 function mediumTiles(){
     for(let i=0; i < 32; i++){
-        createTile()
+        createMediumTile()
     }
 }
 function hardTiles(){
     for(let i=0; i < 64; i++){
-        createTile()
+        createHardTile()
     }
 }
 
 
+hardTiles()
