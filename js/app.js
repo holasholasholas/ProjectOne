@@ -11,6 +11,7 @@ let awaitingEndOfMove = false;
 function buildTile(color){
     const element = document.createElement("div");
     
+    //using data color to match with color 
     element.classList.add("tile");
     element.setAttribute("data-color", color);
     
@@ -28,21 +29,23 @@ function buildTile(color){
 
             return;
         }
-       
+       // condition to match tiles
         const colorToMatch = activeTile.getAttribute("data-color");
 
+        // if tiles match, + tile count
         if(colorToMatch === color){
             awaitingEndOfMove = false;
             activeTile = null;
             revealedCount += 2;
 
+            //condition to complete game
             if (revealedCount === tileCount){
                 alert("you win!");
 
             }
             return;
         }
-
+        // resets and wait 1sec if tiles don't match 
         awaitingEndOfMove = true;
         setTimeout(() => {
             element.style.backgroundColor = null;
@@ -67,3 +70,4 @@ for (let i=0; i < tileCount; i++){
     colorPickList.splice(randomIndex, 1);
     tilesContainer.appendChild(tile);
 }
+
