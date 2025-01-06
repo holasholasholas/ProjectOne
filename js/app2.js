@@ -1,7 +1,12 @@
+let selectDiffculty;
+
+
 
 const tilesContainerEasy = document.querySelector(".easy-tiles")
 const tilesContainerMedium = document.querySelector(".medium-tiles")
 const tilesContainerHard = document.querySelector(".hard-tiles")
+
+
 
 function createEasyTile(){
     const element = document.createElement("div");
@@ -11,7 +16,6 @@ function createEasyTile(){
     tilesContainerEasy.appendChild(element)
     
 }
-
 function createMediumTile(){
     const element = document.createElement("div");
     const randomId = Math.random();
@@ -20,7 +24,6 @@ function createMediumTile(){
     tilesContainerMedium.appendChild(element)
     
 }
-
 function createHardTile(){
     const element = document.createElement("div");
     const randomId = Math.random();
@@ -29,8 +32,6 @@ function createHardTile(){
     tilesContainerHard.appendChild(element)
     
 }
-
-
 function easyTiles(){
     for(let i=0; i < 16; i++){
         createEasyTile()
@@ -48,4 +49,3 @@ function hardTiles(){
 }
 
 
-hardTiles()
