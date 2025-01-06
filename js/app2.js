@@ -48,4 +48,14 @@ function hardTiles(){
     }
 }
 
+function testtwo(){
+    console.log("hi world")
+}
 
+// when user selects diffculty, init game and hide elements 
+
+function init(){
+
+}
+
+document.getElementById("easyButton").addEventListener("click", easyTiles);
