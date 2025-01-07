@@ -33,29 +33,39 @@ function createHardTile(){
     
 }
 function easyTiles(){
+        clearCache();
     for(let i=0; i < 16; i++){
         createEasyTile()
     }
 }
 function mediumTiles(){
+
+        clearCache();
     for(let i=0; i < 32; i++){
         createMediumTile()
     }
 }
 function hardTiles(){
+
+        clearCache();
     for(let i=0; i < 64; i++){
         createHardTile()
     }
 }
-
-function testtwo(){
-    console.log("hi world")
+function clearCache(){
+    document.querySelector(".title").style.display = "none";
+    document.querySelector(".buttons").style.display = "none";
 }
 
 // when user selects diffculty, init game and hide elements 
+//hide divs, create tiles based on diffculty 
 
 function init(){
-
+    
+    document.getElementById("easyButton").onclick = easyTiles;
+    document.getElementById("mediumButton").onclick = mediumTiles;
+    document.getElementById("hardButton").onclick = hardTiles;
+    
 }
 
-document.getElementById("easyButton").addEventListener("click", easyTiles);
+init()
