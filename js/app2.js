@@ -10,7 +10,7 @@ const tilesContainerHard = document.querySelector(".hard-tiles")
 
 function createEasyTile(){
     const element = document.createElement("div");
-    const randomId = Math.random();
+    const randomId = Math.floor(Math.random() * 10);
     element.classList.add("tile");
     element.setAttribute("serial", randomId);
     tilesContainerEasy.appendChild(element)
@@ -69,3 +69,15 @@ function init(){
 }
 
 init()
+
+// document.getElementsByClassName("tile").addEventListener("click",revealTile())
+
+const serialArray = [];
+let assignId = 0;
+
+for (let i=0; i < 8; i++){
+    assignId += 1 ;    
+    serialArray.push(assignId)
+}
+const serialArrayEasy =[...serialArray, ...serialArray];
+console.log(serialArrayEasy);
