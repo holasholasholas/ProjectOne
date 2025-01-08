@@ -24,9 +24,12 @@ body {
 
 .tile {
     height: 100px;
+    font-size: 50px;
+    align-content: center;
+    color: white;
     background: black;
-    border: 5px solid blue;
-    cursor: pointer;
+    border: 5px solid gray;
+   
 }
 
 .easy-tiles {

@@ -1,4 +1,5 @@
-let selectDiffculty;
+let awaitingEndOfMove = false;
+let activeTile = false;
 
 
 
@@ -10,32 +11,48 @@ const tilesContainerHard = document.querySelector(".hard-tiles")
 
 function createEasyTile(){
     const element = document.createElement("div");
-    const randomId = Math.floor(Math.random() * 10);
     element.classList.add("tile");
-    element.setAttribute("serial", randomId);
+    element.setAttribute("serial-number", serialArrayEasy.pop());
+    element.textContent = element.getAttribute("serial-number");
     tilesContainerEasy.appendChild(element)
+    element.addEventListener("click", ()=> {
+        
+    
+        element.textContent = element.getAttribute("serial-number");   
+
+        
+        
+    })
+
+    
+
+    setTimeout(()=> {
+        element.textContent = null;
+        
+        
+            
+    }, 1000);
     
 }
 function createMediumTile(){
     const element = document.createElement("div");
-    const randomId = Math.random();
     element.classList.add("tile");
-    element.setAttribute("serial", randomId);
     tilesContainerMedium.appendChild(element)
     
 }
 function createHardTile(){
     const element = document.createElement("div");
-    const randomId = Math.random();
     element.classList.add("tile");
-    element.setAttribute("serial", randomId);
     tilesContainerHard.appendChild(element)
     
 }
 function easyTiles(){
+        
         clearCache();
     for(let i=0; i < 16; i++){
         createEasyTile()
+       
+
     }
 }
 function mediumTiles(){
@@ -68,9 +85,22 @@ function init(){
     
 }
 
+// fisher-yates algorithm
+
+function shuffle(array) {
+    for (let i = array.length -1; i >= 0; i--){
+        let j = Math.floor(Math.random() * (i + 1));
+        let temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+}
+
+
 init()
 
-// document.getElementsByClassName("tile").addEventListener("click",revealTile())
+
+//generate serial numbers
 
 const serialArray = [];
 let assignId = 0;
@@ -80,4 +110,22 @@ for (let i=0; i < 8; i++){
     serialArray.push(assignId)
 }
 const serialArrayEasy =[...serialArray, ...serialArray];
-console.log(serialArrayEasy);
+
+shuffle(serialArrayEasy);
+
+
+
+
+
+/* 
+
+addeventlistener 
+
+conditions to match tiles
+reveal counter  
+flip mechanics 
+
+condition to win game 
+
+
+*/
