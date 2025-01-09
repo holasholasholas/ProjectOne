@@ -1,7 +1,7 @@
 let hasFlippedCard = false;
 let firstCard, secondCard;
 let tileCount = 0;
-let timeOut;
+let timeOut = false;
 
 
 
@@ -21,12 +21,14 @@ function createEasyTile(){
 
 
     function flipCard(){
-        this.classList.add("flipped");
-    
+        
+        if(timeOut)return;
+        
         if(!hasFlippedCard){
             hasFlippedCard = true;
             firstCard = this;
             this.textContent = element.getAttribute("data-number")
+            console.log(firstCard, {hasFlippedCard})
         
             
             
@@ -35,25 +37,50 @@ function createEasyTile(){
             secondCard = this;
             this.textContent = element.getAttribute("data-number")
             console.log({firstCard, secondCard});
+            console.log(secondCard, {hasFlippedCard});
+            
             
         };
 
-        if(firstCard.dataset.number === secondCard.textContent){
+        if (firstCard.dataset.number === secondCard.dataset.number){
             firstCard.textContent = secondCard.textContent;
             firstCard.removeEventListener("click", flipCard);
             secondCard.removeEventListener("click", flipCard);
-            
             console.log("it matches!");
+        }
+         
+            else {
+                
+                timeOut = true;
+                setTimeout(() => {
+                    element.textContent = null;
+                    timeOut = false;
+
+                },2000);
+                
+            };  
+    
+        }; 
+        
+
+setTimeout(() => {
+    element.textContent = null;
+}, 2000);
             
-        } else{
-            setTimeout(() => {
-                firstCard.textContent = null;
-                secondCard.textContent = null;
-            }, 1000);
+
+};
+            
+        // } else{
+        //     timeOut = true;
+        //     setTimeout(() => {
+        //         firstCard.textContent = null;
+        //         secondCard.textContent = null;
+        //         timeOut = false;
+        //     }, 1000);
             
             
 
-        }
+        
         //     if(firstCard.dataset.number != secondCard.dataset.number){
         //     setTimeout(() => {
         //         firstCard.textContent = null;
@@ -68,11 +95,9 @@ function createEasyTile(){
         //     }
 
      
-}
-setTimeout(() =>{
-    element.textContent = null;
-}, 1000);
-};        
+
+    
+   
     
         
         
