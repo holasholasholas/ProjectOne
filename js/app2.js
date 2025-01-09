@@ -38,10 +38,13 @@ function createEasyTile(){
             
         };
 
-        if(firstCard.textContent === secondCard.textContent){
-            
+        if(firstCard.dataset.number === secondCard.textContent){
+            firstCard.textContent = secondCard.textContent;
+            firstCard.removeEventListener("click", flipCard);
+            secondCard.removeEventListener("click", flipCard);
             
             console.log("it matches!");
+            
         } else{
             setTimeout(() => {
                 firstCard.textContent = null;
