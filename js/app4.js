@@ -1,17 +1,28 @@
 document.getElementById("easyButton").onclick = easyTiles;
+document.getElementById("mediumButton").onclick = mediumTiles;
+document.getElementById("hardButton").onclick = hardTiles;
+
+
 const tilesContainerEasy = document.querySelector(".easy-tiles")
+const tilesContainerMedium = document.querySelector(".medium-tiles")
+const tilesContainerHard = document.querySelector(".hard-tiles")
+
 let serialArray = [];
 let firstCard, secondCard;
 let lockBoard = false;
 let assignId = 0;
 
-for (let i=0; i < 8; i++){
+for (let i=0; i < 16; i++){
     assignId += 1 ;    
     serialArray.push(assignId)
 }
 const serialArrayEasy = [...serialArray, ...serialArray];
+const serialArrayMedium = [...serialArray, ...serialArray];
+const serialArrayHard = [...serialArray, ...serialArray];
 
 shuffle(serialArrayEasy);
+shuffle(serialArrayMedium);
+shuffle(serialArrayHard);
 
 function shuffle(array) {
     for (let i = array.length -1; i >= 0; i--){
@@ -22,9 +33,8 @@ function shuffle(array) {
     }
 }
 
-console.log(serialArrayEasy);
 
-function generateCards(){
+function generateCardsEasy(){
     for(let i=0; i < 16; i++){
     const element = document.createElement("div");
     element.classList.add("tile");
@@ -33,6 +43,23 @@ function generateCards(){
     element.addEventListener("click", flipCard);
 }};
 
+function generateCardsMedium(){
+    for(let i=0; i < 32; i++){
+    const element = document.createElement("div");
+    element.classList.add("tile");
+    element.setAttribute("data-number", serialArrayMedium.pop()); 
+    tilesContainerMedium.appendChild(element);
+    element.addEventListener("click", flipCard);
+}};
+
+function generateCardsHard(){
+    for(let i=0; i < 64; i++){
+    const element = document.createElement("div");
+    element.classList.add("tile");
+    element.setAttribute("data-number", serialArrayHard.pop()); 
+    tilesContainerHard.appendChild(element);
+    element.addEventListener("click", flipCard);
+}};
 
 
 function flipCard(){
@@ -93,7 +120,19 @@ function clearCache(){
 
 // 
 function easyTiles(){
-    generateCards();
+    generateCardsEasy();
+    clearCache();
+    
+}
+
+function mediumTiles(){
+    generateCardsMedium();
+    clearCache();
+    
+}
+
+function hardTiles(){
+    generateCardsHard();
     clearCache();
     
 }
