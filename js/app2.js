@@ -1,5 +1,7 @@
-let awaitingEndOfMove = false;
-let activeTile = false;
+let hasFlippedCard = false;
+let firstCard, secondCard;
+let tileCount = 0;
+let timeOut;
 
 
 
@@ -12,28 +14,74 @@ const tilesContainerHard = document.querySelector(".hard-tiles")
 function createEasyTile(){
     const element = document.createElement("div");
     element.classList.add("tile");
-    element.setAttribute("serial-number", serialArrayEasy.pop());
-    element.textContent = element.getAttribute("serial-number");
+    element.setAttribute("data-number", serialArrayEasy.pop());
+    element.textContent = element.getAttribute("data-number")
     tilesContainerEasy.appendChild(element)
-    element.addEventListener("click", ()=> {
-        
+    element.addEventListener("click", flipCard)
+
+
+    function flipCard(){
+        this.classList.add("flipped");
     
-        element.textContent = element.getAttribute("serial-number");   
-
-        
-        
-    })
-
-    
-
-    setTimeout(()=> {
-        element.textContent = null;
-        
+        if(!hasFlippedCard){
+            hasFlippedCard = true;
+            firstCard = this;
+            this.textContent = element.getAttribute("data-number")
         
             
-    }, 1000);
-    
+            
+        } else {
+            hasFlippedCard = false;
+            secondCard = this;
+            this.textContent = element.getAttribute("data-number")
+            console.log({firstCard, secondCard});
+            
+        };
+
+        if(firstCard.textContent === secondCard.textContent){
+            
+            
+            console.log("it matches!");
+        } else{
+            setTimeout(() => {
+                firstCard.textContent = null;
+                secondCard.textContent = null;
+            }, 1000);
+            
+            
+
+        }
+        //     if(firstCard.dataset.number != secondCard.dataset.number){
+        //     setTimeout(() => {
+        //         firstCard.textContent = null;
+        //         secondCard.textContent = null; 
+                  
+        //     }, 1000);}
+             
+        //     if(firstCard.dataset.number === secondCard.dataset.number){
+        //         firstCard.textContent;
+        //         secondCard.textContent;
+                
+        //     }
+
+     
 }
+setTimeout(() =>{
+    element.textContent = null;
+}, 1000);
+};        
+    
+        
+        
+    
+        
+    
+
+    
+    
+
+
+
 function createMediumTile(){
     const element = document.createElement("div");
     element.classList.add("tile");
