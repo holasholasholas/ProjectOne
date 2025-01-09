@@ -12,6 +12,7 @@ const tilesContainerHard = document.querySelector(".hard-tiles")
 
 
 function createEasyTile(){
+    
     const element = document.createElement("div");
     element.classList.add("tile");
     element.setAttribute("data-number", serialArrayEasy.pop());
@@ -22,7 +23,7 @@ function createEasyTile(){
 
     function flipCard(){
         
-        if(timeOut)return;
+        if(timeOut) return;
         
         if(!hasFlippedCard){
             hasFlippedCard = true;
@@ -42,7 +43,7 @@ function createEasyTile(){
             
         };
 
-        if (firstCard.dataset.number === secondCard.dataset.number){
+        if (firstCard.textContent === secondCard.textContent){
             firstCard.textContent = secondCard.textContent;
             firstCard.removeEventListener("click", flipCard);
             secondCard.removeEventListener("click", flipCard);
@@ -53,8 +54,10 @@ function createEasyTile(){
                 
                 timeOut = true;
                 setTimeout(() => {
-                    element.textContent = null;
+                    secondCard.textContent = null;
+                    firstCard.textContent = null;
                     timeOut = false;
+                    
 
                 },2000);
                 
@@ -99,7 +102,9 @@ setTimeout(() => {
     
    
     
-        
+function revealCards(){
+    
+}        
         
     
         
