@@ -7,18 +7,30 @@ const tilesContainerEasy = document.querySelector(".easy-tiles")
 const tilesContainerMedium = document.querySelector(".medium-tiles")
 const tilesContainerHard = document.querySelector(".hard-tiles")
 
-let serialArray = [];
+let serialEasyArray = [];
+let serialMediumArray = [];
+let serialHardArray = [];
 let firstCard, secondCard;
 let lockBoard = false;
 let assignId = 0;
 
 for (let i=0; i < 16; i++){
     assignId += 1 ;    
-    serialArray.push(assignId)
+    serialEasyArray.push(assignId)
 }
-const serialArrayEasy = [...serialArray, ...serialArray];
-const serialArrayMedium = [...serialArray, ...serialArray];
-const serialArrayHard = [...serialArray, ...serialArray];
+
+for (let i=0; i < 32; i++){
+    assignId += 1 ;    
+    serialMediumArray.push(assignId)
+}
+
+for (let i=0; i < 64; i++){
+    assignId += 1 ;    
+    serialHardArray.push(assignId)
+}
+const serialArrayEasy = [...serialEasyArray, ...serialEasyArray];
+const serialArrayMedium = [...serialMediumArray, ...serialMediumArray];
+const serialArrayHard = [...serialHardArray, ...serialHardArray];
 
 shuffle(serialArrayEasy);
 shuffle(serialArrayMedium);
