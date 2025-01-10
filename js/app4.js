@@ -70,6 +70,7 @@ function generateCardsHard(){
     element.classList.add("tile");
     element.setAttribute("data-number", serialArrayHard.pop()); 
     tilesContainerHard.appendChild(element);
+    
     element.addEventListener("click", flipCard);
 }};
 
@@ -78,8 +79,9 @@ function flipCard(){
     
     if(lockBoard) return;
     if (this === firstCard) return;
-
+    this.textContent = this.dataset.number;
     this.classList.add("flipped");
+    
     if (!firstCard){
         firstCard = this;
         return;
@@ -97,9 +99,11 @@ function checkForMatch(){
     isMatch ? disableCards() : unflipCards();
 
     function disableCards(){
+        
+        
         firstCard.removeEventListener("click", flipCard);
         secondCard.removeEventListener("click", flipCard);
-
+        
         resetBoard();
     };
 
@@ -109,6 +113,8 @@ function checkForMatch(){
 
 function unflipCards(){
     setTimeout(() => {
+        firstCard.textContent = null;
+        secondCard.textContent = null;
         firstCard.classList.remove("flipped");
         secondCard.classList.remove("flipped");
         resetBoard();
