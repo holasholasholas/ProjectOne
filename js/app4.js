@@ -14,17 +14,17 @@ let firstCard, secondCard;
 let lockBoard = false;
 let assignId = 0;
 
-for (let i=0; i < 16; i++){
+for (let i=0; i < 8; i++){
     assignId += 1 ;    
     serialEasyArray.push(assignId)
 }
 
-for (let i=0; i < 32; i++){
+for (let i=0; i < 16; i++){
     assignId += 1 ;    
     serialMediumArray.push(assignId)
 }
 
-for (let i=0; i < 64; i++){
+for (let i=0; i < 32; i++){
     assignId += 1 ;    
     serialHardArray.push(assignId)
 }
@@ -99,6 +99,8 @@ function checkForMatch(){
     function disableCards(){
         firstCard.removeEventListener("click", flipCard);
         secondCard.removeEventListener("click", flipCard);
+
+        resetBoard();
     };
 
     // resetBoard();
